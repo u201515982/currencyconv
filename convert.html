@@ -1,0 +1,25 @@
+<script>
+	//FOR TESTING
+
+	/*function convertir(soles){
+		fetch('http://free.currencyconverterapi.com/api/v6/convert?q=PEN_USD&compact=y')
+		.then(function(response) {
+	    	return response.json();
+		})
+		.then(function(myJson) {;
+			valor = myJson['PEN_USD']['val'];
+			console.log((soles * valor).toFixed(2));
+		});
+	}*/
+
+	var httpReq = new XMLHttpRequest();
+    httpReq.open("GET",'http://free.currencyconverterapi.com/api/v6/convert?q=PEN_USD&compact=y',false);
+    httpReq.send(null);
+    var obj = JSON.parse(httpReq.responseText);
+    console.log(obj['PEN_USD']['val'])
+
+	//currency-name
+	//unit-currency
+    //http://free.currencyconverterapi.com/api/v6/convert?q=USD_PEN&compact=y
+	//{"USD_PEN":{"val":3.30515}}
+</script>
